@@ -1,7 +1,7 @@
  $(document).ready(function(){
 
      // form validation
-     $("form").validate({
+     $("form.addcontactform").validate({
          rules : {
              firstName: {
                  required: true,
@@ -32,7 +32,11 @@
 
      // tablesorter
      $(".tablesorter").tablesorter({
-         sortList: [ [0,0] ]
+         sortList: [ [0,0] ],
+         headers: {
+             1: { sorter: false },
+             2: { sorter: false }
+         }
      });
 
      /*

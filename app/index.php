@@ -40,7 +40,7 @@
 
             ?>
 
-            <form action="addcontacts.php" method="post">
+            <form action="addcontacts.php" method="post" class="addcontactform">
                 <div class="form-group">
                     <label for="firstName">First Name</label>
                     <input type="text" class="form-control" id="firstName" name="firstName" placeholder="Enter First Name" required>
