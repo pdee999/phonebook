@@ -65,43 +65,47 @@
               <div id="pbResults">
 
                   <div class="table-responsive">
-                      <table class="table table-striped table-bordered table-condensed">
-                          <tr>
-                              <th>Name (Last, First)</th>
-                              <th>Phone Number</th>
-                              <th>Delete</th>
-                          </tr>
-                          <?php
-                          // server information
-                          $servername = "localhost";
-                          $username = "pdrittenhouse";
-                          $password = "password";
-                          $dbname = "phonebook";
+                      <table class="table table-striped table-bordered table-condensed tablesorter">
+                          <thead>
+                              <tr>
+                                  <th>Name (Last, First)</th>
+                                  <th>Phone Number</th>
+                                  <th>Delete</th>
+                              </tr>
+                          </thead>
+                          <tbody>
+                              <?php
+                              // server information
+                              $servername = "localhost";
+                              $username = "pdrittenhouse";
+                              $password = "password";
+                              $dbname = "phonebook";
 
-                          // create connection
-                          $conn = new mysqli($servername, $username, $password, $dbname);
-                          // Check connection
-                          if ($conn->connect_error) {
-                              die("Connection failed: " . $conn->connect_error);
-                          }
-
-                          // query database
-                          $sql = "SELECT firstname, lastname, phone FROM `phonebook`.`contacts`";
-                          $result = $conn->query($sql);
-
-                          if ($result->num_rows > 0) {
-                              // output data of each row
-                              while($row = $result->fetch_assoc()) {
-                                  // display query results
-                                  echo '<tr><td>' . $row["lastname"]. ', ' . $row["firstname"]. '</td><td>' . $row["phone"]. '</td><td><form action="delete.php" method="post"><button type="submit" class="btn btn-default button" name="Delete" id="Delete">Delete</button></form></td></tr>';
+                              // create connection
+                              $conn = new mysqli($servername, $username, $password, $dbname);
+                              // Check connection
+                              if ($conn->connect_error) {
+                                  die("Connection failed: " . $conn->connect_error);
                               }
-                              $result->free();
-                          } else {
-                              echo "0 results";
-                          }
-                          $conn->close();
 
-                          ?>
+                              // query database
+                              $sql = "SELECT firstname, lastname, phone FROM `phonebook`.`contacts`";
+                              $result = $conn->query($sql);
+
+                              if ($result->num_rows > 0) {
+                                  // output data of each row
+                                  while($row = $result->fetch_assoc()) {
+                                      // display query results
+                                      echo '<tr><td>' . $row["lastname"]. ', ' . $row["firstname"]. '</td><td>' . $row["phone"]. '</td><td><form action="delete.php" method="post"><button type="submit" class="btn btn-default button" name="Delete" id="Delete">Delete</button></form></td></tr>';
+                                  }
+                                  $result->free();
+                              } else {
+                                  echo "0 results";
+                              }
+                              $conn->close();
+
+                              ?>
+                          </tbody>
                       </table>
                   </div>
 
@@ -153,6 +157,7 @@
         <script src="../bower_components/bootstrap/js/collapse.js"></script>
         <script src="../bower_components/bootstrap/js/tab.js"></script>
         <script src="../bower_components/jquery-validate/dist/jquery.validate.js"></script>
+        <script src="../bower_components/tablesorter/jquery.tablesorter.js"></script>
         <!-- endbuild -->
 
         <!-- build:js({app,.tmp}) scripts/main.js -->

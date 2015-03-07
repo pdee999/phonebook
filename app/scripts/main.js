@@ -30,6 +30,11 @@
          }
      });
 
+     // tablesorter
+     $(".tablesorter").tablesorter({
+         sortList: [ [0,0] ]
+     });
+
      /*
       // AJAX for adding contacts
       $('.button').click(function(){
