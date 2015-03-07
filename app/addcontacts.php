@@ -5,6 +5,7 @@
     <title>phonebook</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
+      <meta http-equiv="refresh" content="0; url=index.php" />
     <link rel="shortcut icon" href="/favicon.ico">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css(.) styles/vendor.css -->
@@ -57,7 +58,7 @@
           $sql = "INSERT INTO `phonebook`.`contacts` (`firstname`, `lastname`, `phone`) VALUES ('$firstName', '$lastName', '$phone')";
 
           if ($conn->query($sql) === TRUE) {
-              echo "New record created successfully";
+              echo "Your contact has been saved!";
           } else {
               echo "Error: " . "<p>" . $sql . "</p><p>" . $conn->error . "</p>";
           }

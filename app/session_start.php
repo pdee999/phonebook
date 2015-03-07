@@ -11,9 +11,9 @@ if (isset($_POST['Submit'])) {
 
 // variables for server information
 $servername = "localhost";
-$username = "root";
-$password = "pdawg420";
-$dbname = "test";
+$username = "pdrittenhouse";
+$password = "password";
+$dbname = "phonebook";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -24,12 +24,12 @@ if ($conn->connect_error) {
 
 // insert form values into sql table
 $sql = "CREATE TABLE `phonebook`.`contacts` (
-          pb_Id INT NOT NULL,
-          firstname VARCHAR(90) NOT NULL,
-          lastname VARCHAR(90) NOT NULL,
-          phone INT NOT NULL,
-          PRIMARY KEY (pb_id),
-          UNIQUE (phone)
+          pb_Id INT NOT NULL AUTO_INCREMENT,
+          firstname TEXT NOT NULL,
+          lastname TEXT,
+          phone TEXT NOT NULL,
+          PRIMARY KEY (pb_Id),
+          UNIQUE (pb_Id)
           );
 
           INSERT INTO `phonebook`.`contacts` (`firstname`, `lastname`, `phone`) VALUES ('$firstName', '$lastName', '$phone')";

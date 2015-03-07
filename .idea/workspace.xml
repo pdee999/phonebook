@@ -35,7 +35,7 @@
       <file leaf-file-name="main.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/scripts/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="90">
+            <state line="27" column="83" selection-start="950" selection-end="950" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="765">
               <folding />
             </state>
           </provider>
@@ -44,10 +44,10 @@
       <file leaf-file-name="index.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="97" column="46" selection-start="4236" selection-end="4236" vertical-scroll-proportion="0.7451923" vertical-offset="1035" max-vertical-offset="2550">
+            <state line="63" column="18" selection-start="2417" selection-end="2417" vertical-scroll-proportion="0.50167227" vertical-offset="660" max-vertical-offset="2565">
               <folding>
-                <marker date="1425753368000" expanded="true" signature="3516:3577" placeholder="SELECT first..." />
-                <marker date="1425753368000" expanded="true" signature="4936:5149" placeholder="..." />
+                <marker date="1425765496000" expanded="true" signature="3537:3598" placeholder="SELECT first..." />
+                <marker date="1425765496000" expanded="true" signature="4965:5178" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -56,9 +56,10 @@
       <file leaf-file-name="delete.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/delete.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="47" column="49" selection-start="1652" selection-end="1652" vertical-scroll-proportion="-11.25" vertical-offset="435" max-vertical-offset="1935">
+            <state line="68" column="18" selection-start="2065" selection-end="2065" vertical-scroll-proportion="-20.0" vertical-offset="540" max-vertical-offset="1875">
               <folding>
-                <marker date="1425753172000" expanded="true" signature="1621:1665" placeholder="DELETE FROM ..." />
+                <marker date="1425757883000" expanded="true" signature="1621:1665" placeholder="DELETE FROM ..." />
+                <marker date="1425757883000" expanded="true" signature="1621:1652" placeholder="DELETE FROM ..." />
               </folding>
             </state>
           </provider>
@@ -67,20 +68,20 @@
       <file leaf-file-name="session_start.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/session_start.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="0" selection-start="618" selection-end="618" vertical-scroll-proportion="-13.5" vertical-offset="21" max-vertical-offset="735">
+            <state line="1" column="0" selection-start="6" selection-end="39" vertical-scroll-proportion="-0.625" vertical-offset="0" max-vertical-offset="735">
               <folding>
-                <marker date="1425747410000" expanded="true" signature="925:1039" placeholder="INSERT INTO ..." />
+                <marker date="1425755643000" expanded="true" signature="932:1046" placeholder="INSERT INTO ..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="contacts.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/contacts.php">
+      <file leaf-file-name="addcontacts.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/addcontacts.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="79" column="14" selection-start="2552" selection-end="2743" vertical-scroll-proportion="-24.125" vertical-offset="606" max-vertical-offset="2070">
+            <state line="7" column="58" selection-start="257" selection-end="257" vertical-scroll-proportion="-1.2941177" vertical-offset="17" max-vertical-offset="2085">
               <folding>
-                <marker date="1425752346000" expanded="true" signature="2016:2130" placeholder="INSERT INTO ..." />
+                <marker date="1425765276000" expanded="true" signature="2079:2193" placeholder="INSERT INTO ..." />
               </folding>
             </state>
           </provider>
@@ -99,10 +100,13 @@
         <option value="$PROJECT_DIR$/app/index.html" />
         <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/app/phpinfo.php" />
-        <option value="$PROJECT_DIR$/app/scripts/main.js" />
+        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/app/session_start.php" />
         <option value="$PROJECT_DIR$/app/contacts.php" />
         <option value="$PROJECT_DIR$/app/delete.php" />
+        <option value="$PROJECT_DIR$/app/styles/main.css" />
+        <option value="$PROJECT_DIR$/app/scripts/main.js" />
+        <option value="$PROJECT_DIR$/app/addcontacts.php" />
         <option value="$PROJECT_DIR$/app/index.php" />
       </list>
     </option>
@@ -167,7 +171,79 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="bower_components" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="phone book" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="phonebook" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bower_components" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jquery-validate" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="phone book" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="phonebook" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bower_components" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jquery-validate" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dist" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="phone book" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="phonebook" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="phone book" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="phonebook" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="styles" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -230,10 +306,10 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18554217" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18554217" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -280,8 +356,8 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="42" column="38" selection-start="1309" selection-end="1321" vertical-scroll-proportion="0.0" vertical-offset="630" max-vertical-offset="1875">
           <folding>
-            <marker date="1425753368000" expanded="true" signature="3516:3577" placeholder="SELECT first..." />
-            <marker date="1425753368000" expanded="true" signature="4936:5149" placeholder="..." />
+            <marker date="1425765496000" expanded="true" signature="3537:3598" placeholder="SELECT first..." />
+            <marker date="1425765496000" expanded="true" signature="4965:5178" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -297,23 +373,25 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="25" column="8" selection-start="664" selection-end="908" vertical-scroll-proportion="0.0" vertical-offset="375" max-vertical-offset="735">
           <folding>
-            <marker date="1425747410000" expanded="true" signature="925:1039" placeholder="INSERT INTO ..." />
+            <marker date="1425755643000" expanded="true" signature="932:1046" placeholder="INSERT INTO ..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/contacts.php">
+    <entry file="file://$PROJECT_DIR$/app/addcontacts.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="51" column="30" selection-start="1865" selection-end="1865" vertical-scroll-proportion="0.0" vertical-offset="765" max-vertical-offset="2055">
           <folding>
-            <marker date="1425752346000" expanded="true" signature="2016:2130" placeholder="INSERT INTO ..." />
+            <marker date="1425765276000" expanded="true" signature="2079:2193" placeholder="INSERT INTO ..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="82" column="0" selection-start="2310" selection-end="2310" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1740" />
+        <state line="82" column="0" selection-start="2310" selection-end="2310" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1740">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/index.html">
@@ -324,11 +402,6 @@
     <entry file="file://$PROJECT_DIR$/app/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="36" column="12" selection-start="1337" selection-end="1337" vertical-scroll-proportion="0.2314205" vertical-offset="294" max-vertical-offset="1635" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="82" column="0" selection-start="2310" selection-end="2310" vertical-scroll-proportion="0.5061148" vertical-offset="692" max-vertical-offset="1755" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Gruntfile.js">
@@ -343,46 +416,68 @@
         <state line="0" column="16" selection-start="16" selection-end="16" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="625" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/main.js">
+    <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="649">
+        <state line="5" column="4" selection-start="50" selection-end="50" vertical-scroll-proportion="0.12038523" vertical-offset="0" max-vertical-offset="623">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="82" column="0" selection-start="2310" selection-end="2310" vertical-scroll-proportion="2.0192308" vertical-offset="0" max-vertical-offset="1815">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/styles/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="67" column="16" selection-start="1062" selection-end="1062" vertical-scroll-proportion="0.6018519" vertical-offset="615" max-vertical-offset="1500">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/session_start.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="0" selection-start="618" selection-end="618" vertical-scroll-proportion="-13.5" vertical-offset="21" max-vertical-offset="735">
+        <state line="1" column="0" selection-start="6" selection-end="39" vertical-scroll-proportion="-0.625" vertical-offset="0" max-vertical-offset="735">
           <folding>
-            <marker date="1425747410000" expanded="true" signature="925:1039" placeholder="INSERT INTO ..." />
+            <marker date="1425755643000" expanded="true" signature="932:1046" placeholder="INSERT INTO ..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/contacts.php">
+    <entry file="file://$PROJECT_DIR$/app/scripts/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="79" column="14" selection-start="2552" selection-end="2743" vertical-scroll-proportion="-24.125" vertical-offset="606" max-vertical-offset="2070">
-          <folding>
-            <marker date="1425752346000" expanded="true" signature="2016:2130" placeholder="INSERT INTO ..." />
-          </folding>
+        <state line="27" column="83" selection-start="950" selection-end="950" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="765">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/delete.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="47" column="49" selection-start="1652" selection-end="1652" vertical-scroll-proportion="-11.25" vertical-offset="435" max-vertical-offset="1935">
+        <state line="68" column="18" selection-start="2065" selection-end="2065" vertical-scroll-proportion="-20.0" vertical-offset="540" max-vertical-offset="1875">
           <folding>
-            <marker date="1425753172000" expanded="true" signature="1621:1665" placeholder="DELETE FROM ..." />
+            <marker date="1425757883000" expanded="true" signature="1621:1665" placeholder="DELETE FROM ..." />
+            <marker date="1425757883000" expanded="true" signature="1621:1652" placeholder="DELETE FROM ..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/addcontacts.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="58" selection-start="257" selection-end="257" vertical-scroll-proportion="-1.2941177" vertical-offset="17" max-vertical-offset="2085">
+          <folding>
+            <marker date="1425765276000" expanded="true" signature="2079:2193" placeholder="INSERT INTO ..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="97" column="46" selection-start="4236" selection-end="4236" vertical-scroll-proportion="0.7451923" vertical-offset="1035" max-vertical-offset="2550">
+        <state line="63" column="18" selection-start="2417" selection-end="2417" vertical-scroll-proportion="0.50167227" vertical-offset="660" max-vertical-offset="2565">
           <folding>
-            <marker date="1425753368000" expanded="true" signature="3516:3577" placeholder="SELECT first..." />
-            <marker date="1425753368000" expanded="true" signature="4936:5149" placeholder="..." />
+            <marker date="1425765496000" expanded="true" signature="3537:3598" placeholder="SELECT first..." />
+            <marker date="1425765496000" expanded="true" signature="4965:5178" placeholder="..." />
           </folding>
         </state>
       </provider>

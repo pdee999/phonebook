@@ -62,16 +62,12 @@
         <div class="col-lg-6">
           <h4></h4>
 
-
-
         </div>
 
 
           <div class="col-lg-6">
-              <h4>Success</h4>
+              <h4></h4>
 
-              Your name is: <?php echo $_POST["firstName"]; ?> <?php echo $_POST["lastName"]; ?><br>
-              Your phone number is: <?php echo $_POST["phoneNumber"]; ?>
           </div>
 
 

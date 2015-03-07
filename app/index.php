@@ -34,16 +34,16 @@
 
       <div class="row marketing">
         <div class="col-lg-6">
-          <h4>Add New Contact</h4>
+          <h4>Add a New Contact</h4>
 
             <?php
 
             ?>
 
-            <form action="contacts.php" method="post">
+            <form action="addcontacts.php" method="post">
                 <div class="form-group">
                     <label for="firstName">First Name</label>
-                    <input type="text" class="form-control" id="firstName" name="firstName" placeholder="Enter First Name">
+                    <input type="text" class="form-control" id="firstName" name="firstName" placeholder="Enter First Name" required>
                 </div>
                 <div class="form-group">
                     <label for="lastName">Last Name</label>
@@ -51,8 +51,8 @@
                 </div>
                 <div class="form-group">
                     <label for="phoneNumber">Phone Number</label>
-                    <input type="tel" class="form-control" id="phoneNumber" name="phoneNumber" placeholder="Enter Phone Number">
-                    <p class="help-block">Enter phone number in the following format: 000-000-0000.</p>
+                    <input type="tel" class="form-control" id="phoneNumber" name="phoneNumber" placeholder="Enter Phone Number" required>
+                    <p class="help-block">Enter phone number in the following format: 0000000000.</p>
                 </div>
 
                 <button type="submit" class="btn btn-default button" name="Submit" id="Submit">Submit</button>
@@ -89,10 +89,10 @@
                           $sql = "SELECT firstname, lastname, phone FROM `phonebook`.`contacts`";
                           $result = $conn->query($sql);
 
-                          // display query results
                           if ($result->num_rows > 0) {
                               // output data of each row
                               while($row = $result->fetch_assoc()) {
+                                  // display query results
                                   echo '<tr><td>' . $row["lastname"]. ', ' . $row["firstname"]. '</td><td>' . $row["phone"]. '</td><td><form action="delete.php" method="post"><button type="submit" class="btn btn-default button" name="Delete" id="Delete">Delete</button></form></td></tr>';
                               }
                               $result->free();
@@ -152,6 +152,7 @@
         <script src="../bower_components/bootstrap/js/scrollspy.js"></script>
         <script src="../bower_components/bootstrap/js/collapse.js"></script>
         <script src="../bower_components/bootstrap/js/tab.js"></script>
+        <script src="../bower_components/jquery-validate/dist/jquery.validate.js"></script>
         <!-- endbuild -->
 
         <!-- build:js({app,.tmp}) scripts/main.js -->
