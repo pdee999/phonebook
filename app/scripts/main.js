@@ -25,7 +25,7 @@
                  required: "Please enter a phone number.",
                  minlength: "Please enter at least 10 digits.",
                  maxlength: "Please enter no more than 10 digits.",
-                 digits: "Please enter an unformatted phone number (i.e. 8005551234)."
+                 digits: "Please enter a phone number (i.e. 8005551234)."
              }
          }
      });
@@ -41,14 +41,14 @@
 
      /*
       // AJAX for adding contacts
-      $('.button').click(function(){
-      var clickBtnValue = $(this).val();
-      var ajaxurl = 'session_start.php',
-      data =  {'action': clickBtnValue};
-      $.post(ajaxurl, data, function (response) {
-      // Response div goes here.
-      alert("Your contact has been saved!");
-      });
+      $('.addbutton').click(function(){
+          var clickBtnValue = $(this).val();
+          var ajaxurl = 'session_start.php',
+          data =  {'action': clickBtnValue};
+          $.post(ajaxurl, data, function (response) {
+          // Response div goes here.
+          alert("Your contact has been saved!");
+          });
       });
       */
 

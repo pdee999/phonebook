@@ -5,7 +5,7 @@
     <title>phonebook</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
-    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="shortcut icon" href="favicon.ico">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
@@ -55,7 +55,7 @@
                     <p class="help-block">Enter phone number in the following format: 0000000000.</p>
                 </div>
 
-                <button type="submit" class="btn btn-default button" name="Submit" id="Submit">Submit</button>
+                <button type="submit" class="btn btn-default addbutton" name="Submit" id="Submit">Submit</button>
             </form>
         </div>
 
@@ -89,14 +89,14 @@
                               }
 
                               // query database
-                              $sql = "SELECT firstname, lastname, phone FROM `phonebook`.`contacts`";
+                              $sql = "SELECT firstname, lastname, phone, pb_Id FROM `phonebook`.`contacts`";
                               $result = $conn->query($sql);
 
                               if ($result->num_rows > 0) {
                                   // output data of each row
                                   while($row = $result->fetch_assoc()) {
                                       // display query results
-                                      echo '<tr><td>' . $row["lastname"]. ', ' . $row["firstname"]. '</td><td>' . $row["phone"]. '</td><td><form action="delete.php" method="post"><button type="submit" class="btn btn-default button" name="Delete" id="Delete">Delete</button></form></td></tr>';
+                                      echo '<tr><td>' . $row["lastname"]. ', ' . $row["firstname"]. '</td><td>' . $row["phone"]. '</td><td><form action="delete.php" method="post"><button type="submit" class="btn btn-default" name="Delete" id="Delete">Delete</button></form></td></tr>';
                                   }
                                   $result->free();
                               } else {

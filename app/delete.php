@@ -5,7 +5,7 @@
     <title>phonebook</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
-    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="shortcut icon" href="favicon.ico">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
@@ -30,6 +30,13 @@
       <div class="header">
         <h3 class="text-muted">Phonebook</h3>
           <?php
+          // start session
+          session_start();
+
+          // store form values as session variable
+          if (isset($_POST['Delete'])) {
+              $pb_Id = $_SESSION['pb_Id'] = $_POST['pb_Id'];
+          }
 
           // server information
           $servername = "localhost";
@@ -45,7 +52,7 @@
           }
 
           // delete record
-          $del = "DELETE FROM contacts WHERE [id=pb_ID] AND []";
+          $del = "DELETE FROM contacts WHERE [pb_Id=$pb_Id]";
 
           if ($conn->query($del) === TRUE) {
               echo "Record deleted successfully";
@@ -66,8 +73,8 @@
 
 
           <div class="col-lg-6">
-              <h4></h4>
-
+              <h4>Result</h4>
+              <?php echo($_POST['pb_Id']); ?>
           </div>
 
 
@@ -109,6 +116,8 @@
         <script src="../bower_components/bootstrap/js/scrollspy.js"></script>
         <script src="../bower_components/bootstrap/js/collapse.js"></script>
         <script src="../bower_components/bootstrap/js/tab.js"></script>
+        <script src="../bower_components/jquery-validate/dist/jquery.validate.js"></script>
+        <script src="../bower_components/tablesorter/jquery.tablesorter.js"></script>
         <!-- endbuild -->
 
         <!-- build:js({app,.tmp}) scripts/main.js -->

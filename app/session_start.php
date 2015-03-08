@@ -2,6 +2,19 @@
 // start session
 session_start();
 
+// server information
+$servername = "localhost";
+$username = "pdrittenhouse";
+$password = "password";
+$dbname = "phonebook";
+
+// create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
 // store form values as session variable
 if (isset($_POST['Submit'])) {
     $firstName = $_SESSION['firstName'] = $_POST['firstName'];
@@ -9,36 +22,15 @@ if (isset($_POST['Submit'])) {
     $phone = $_SESSION['phoneNumber'] = $_POST['phoneNumber'];
 }
 
-// variables for server information
-$servername = "localhost";
-$username = "pdrittenhouse";
-$password = "password";
-$dbname = "phonebook";
-
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-
 // insert form values into sql table
-$sql = "CREATE TABLE `phonebook`.`contacts` (
-          pb_Id INT NOT NULL AUTO_INCREMENT,
-          firstname TEXT NOT NULL,
-          lastname TEXT,
-          phone TEXT NOT NULL,
-          PRIMARY KEY (pb_Id),
-          UNIQUE (pb_Id)
-          );
+$sql = "INSERT INTO `phonebook`.`contacts` (`firstname`, `lastname`, `phone`) VALUES ('$firstName', '$lastName', '$phone')";
 
-          INSERT INTO `phonebook`.`contacts` (`firstname`, `lastname`, `phone`) VALUES ('$firstName', '$lastName', '$phone')";
-
-if ($conn->query($sql) === TRUE) {
-    echo "New record created successfully";
-} else {
-    echo "Error: " . "<p>" . $sql . "</p><p>" . $conn->error . "</p>";
-}
+if ($conn->query($sql) === TRUE) { ?>
+    <script>alert("Your contact has been saved!");</script>
+<?php
+} else { ?>
+    <script>alert(" . <?php echo "Error: " . "<p>" . $sql . "</p><p>" . $conn->error . "</p>"; ?> . ");</script>
+<?php }
 
 $conn->close();
 ?>

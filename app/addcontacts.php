@@ -6,7 +6,7 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
       <meta http-equiv="refresh" content="0; url=index.php" />
-    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="shortcut icon" href="favicon.ico">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
@@ -34,6 +34,13 @@
           // start session
           session_start();
 
+          // store form values as session variable
+          if (isset($_POST['Submit'])) {
+              $firstName = $_SESSION['firstName'] = $_POST['firstName'];
+              $lastName = $_SESSION['lastName'] = $_POST['lastName'];
+              $phone = $_SESSION['phoneNumber'] = $_POST['phoneNumber'];
+          }
+
           // server information
           $servername = "localhost";
           $username = "pdrittenhouse";
@@ -45,13 +52,6 @@
           // Check connection
           if ($conn->connect_error) {
               die("Connection failed: " . $conn->connect_error);
-          }
-
-          // store form values as session variable
-          if (isset($_POST['Submit'])) {
-              $firstName = $_SESSION['firstName'] = $_POST['firstName'];
-              $lastName = $_SESSION['lastName'] = $_POST['lastName'];
-              $phone = $_SESSION['phoneNumber'] = $_POST['phoneNumber'];
           }
 
           // insert form values into sql table
@@ -123,6 +123,8 @@
         <script src="../bower_components/bootstrap/js/scrollspy.js"></script>
         <script src="../bower_components/bootstrap/js/collapse.js"></script>
         <script src="../bower_components/bootstrap/js/tab.js"></script>
+        <script src="../bower_components/jquery-validate/dist/jquery.validate.js"></script>
+        <script src="../bower_components/tablesorter/jquery.tablesorter.js"></script>
         <!-- endbuild -->
 
         <!-- build:js({app,.tmp}) scripts/main.js -->
