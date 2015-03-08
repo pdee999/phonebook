@@ -68,25 +68,15 @@
                       <table class="table table-striped table-bordered table-condensed tablesorter">
                           <thead>
                               <tr>
-                                  <th>Name (Last, First)</th>
+                                  <th id="nameCol">Name (Last, First) <span class="glyphicon glyphicon-ok"></span></th>
                                   <th>Phone Number</th>
                                   <th>Delete</th>
                               </tr>
                           </thead>
                           <tbody>
                               <?php
-                              // server information
-                              $servername = "localhost";
-                              $username = "pdrittenhouse";
-                              $password = "password";
-                              $dbname = "phonebook";
-
-                              // create connection
-                              $conn = new mysqli($servername, $username, $password, $dbname);
-                              // Check connection
-                              if ($conn->connect_error) {
-                                  die("Connection failed: " . $conn->connect_error);
-                              }
+                              //include db configuration file
+                              include_once("config.php");
 
                               // query database
                               $sql = "SELECT firstname, lastname, phone, pb_Id FROM `phonebook`.`contacts`";
@@ -96,7 +86,8 @@
                                   // output data of each row
                                   while($row = $result->fetch_assoc()) {
                                       // display query results
-                                      echo '<tr><td>' . $row["lastname"]. ', ' . $row["firstname"]. '</td><td>' . $row["phone"]. '</td><td><form action="delete.php" method="post"><button type="submit" class="btn btn-default" name="Delete" id="Delete">Delete</button></form></td></tr>';
+                                      echo '<tr><td>' . $row["lastname"]. ', ' . $row["firstname"]. '</td><td>' . $row["phone"]. '</td><td><form action="delete.php" method="post">
+                                      <button type="submit" class="btn btn-default" name="Delete" id="Delete" value="'.$row["pb_Id"].'">Delete</button></form></td></tr>';
                                   }
                                   $result->free();
                               } else {

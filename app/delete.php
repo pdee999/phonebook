@@ -5,6 +5,7 @@
     <title>phonebook</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
+      <meta http-equiv="refresh" content="0; url=index.php" />
     <link rel="shortcut icon" href="favicon.ico">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css(.) styles/vendor.css -->
@@ -30,36 +31,24 @@
       <div class="header">
         <h3 class="text-muted">Phonebook</h3>
           <?php
-          // start session
-          session_start();
 
           // store form values as session variable
-          if (isset($_POST['Delete'])) {
-              $pb_Id = $_SESSION['pb_Id'] = $_POST['pb_Id'];
-          }
+          $pbID = $_POST['Delete'];
 
-          // server information
-          $servername = "localhost";
-          $username = "pdrittenhouse";
-          $password = "password";
-          $dbname = "phonebook";
-
-          // create connection
-          $conn = new mysqli($servername, $username, $password, $dbname);
-          // Check connection
-          if ($conn->connect_error) {
-              die("Connection failed: " . $conn->connect_error);
-          }
+          //include db configuration file
+          include_once("config.php");
 
           // delete record
-          $del = "DELETE FROM contacts WHERE [pb_Id=$pb_Id]";
+          $del = "DELETE FROM `phonebook`.`contacts` WHERE `contacts`.`pb_Id` = $pbID";
 
+          // success/error alert
           if ($conn->query($del) === TRUE) {
               echo "Record deleted successfully";
           } else {
               echo "Error deleting record: " . $conn->error;
           }
 
+          //close db connection
           $conn->close();
           ?>
       </div>
@@ -73,8 +62,8 @@
 
 
           <div class="col-lg-6">
-              <h4>Result</h4>
-              <?php echo($_POST['pb_Id']); ?>
+              <h4>You deleted a contact!</h4>
+              <p>Contact #<?php echo($pbID); ?> has been deleted successfully!</p>
           </div>
 
 

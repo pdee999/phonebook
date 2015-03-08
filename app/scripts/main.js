@@ -39,6 +39,9 @@
          }
      });
 
+     // swap table icon
+     //$('#nameCol').click().toggleClass('glyphicon-triangle-top glyphicon-triangle-bottom');
+
      /*
       // AJAX for adding contacts
       $('.addbutton').click(function(){
@@ -51,5 +54,6 @@
           });
       });
       */
+
 
  });

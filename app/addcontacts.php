@@ -31,38 +31,27 @@
       <div class="header">
         <h3 class="text-muted">Phonebook</h3>
           <?php
-          // start session
-          session_start();
 
           // store form values as session variable
-          if (isset($_POST['Submit'])) {
-              $firstName = $_SESSION['firstName'] = $_POST['firstName'];
-              $lastName = $_SESSION['lastName'] = $_POST['lastName'];
-              $phone = $_SESSION['phoneNumber'] = $_POST['phoneNumber'];
-          }
+          $firstName = $_POST['firstName'];
+          $lastName = $_POST['lastName'];
+          $phone = $_POST['phoneNumber'];
 
-          // server information
-          $servername = "localhost";
-          $username = "pdrittenhouse";
-          $password = "password";
-          $dbname = "phonebook";
 
-          // create connection
-          $conn = new mysqli($servername, $username, $password, $dbname);
-          // Check connection
-          if ($conn->connect_error) {
-              die("Connection failed: " . $conn->connect_error);
-          }
+          //include db configuration file
+          include_once("config.php");
 
           // insert form values into sql table
           $sql = "INSERT INTO `phonebook`.`contacts` (`firstname`, `lastname`, `phone`) VALUES ('$firstName', '$lastName', '$phone')";
 
+          // success/error alert
           if ($conn->query($sql) === TRUE) {
               echo "Your contact has been saved!";
           } else {
               echo "Error: " . "<p>" . $sql . "</p><p>" . $conn->error . "</p>";
           }
 
+          //close db connection
           $conn->close();
           ?>
       </div>
@@ -78,10 +67,9 @@
 
 
           <div class="col-lg-6">
-              <h4>Success</h4>
-
-              Your name is: <?php echo $_POST["firstName"]; ?> <?php echo $_POST["lastName"]; ?><br>
-              Your phone number is: <?php echo $_POST["phoneNumber"]; ?>
+              <h4>You added a contact!</h4>
+              Name: <?php echo($firstName . ' ' . $lastName); ?><br>
+              Phone Number: <?php echo($phone); ?>
           </div>
 
 
