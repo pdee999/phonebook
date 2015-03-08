@@ -40,7 +40,9 @@
      });
 
      // swap table icon
-     //$('#nameCol').click().toggleClass('glyphicon-triangle-top glyphicon-triangle-bottom');
+     $('#nameCol').click(function(){
+         $('#nameCol span').toggleClass('glyphicon-sort-by-alphabet glyphicon-sort-by-alphabet-alt')
+     });
 
      /*
       // AJAX for adding contacts
