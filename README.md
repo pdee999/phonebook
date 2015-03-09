@@ -36,7 +36,7 @@ bower install
 
 ##Create database table
 
-You will need to create a local site and database and add SQL table using the following SQL statement:
+You will need to create a local site and database and add a SQL table using the following SQL statement:
 
 ```shell
 CREATE TABLE contacts (

@@ -2,7 +2,45 @@
 
      // form validation
      $("form.addcontactform").validate({
-         rules : {
+         submitHandler: function addContact (){ // AJAX for adding contacts
+             var firstName = $('.addcontactform').find('input[name="firstName"]').val(),
+                 lastName = $('.addcontactform').find('input[name="lastName"]').val(),
+                 phoneNumber = $('.addcontactform').find('input[name="phoneNumber"]').val();
+             $.ajax({
+                 url: 'add.php',
+                 type: 'post',
+                 data: {
+                     'firstname': firstName,
+                     'lastname': lastName,
+                     'phone': phoneNumber
+                 },
+                 success: function(data) {
+                     if(data == "ok") {
+                         alert('Your contact has been saved.');
+                     }
+                 },
+                 error: function(xhr, desc, err) {
+                     console.log(xhr);
+                     console.log("Details: " + desc + "\nError:" + err);
+                     alert('Contact not saved.');
+                 }
+             }); // end ajax call
+             location.reload();
+         },
+         invalidHandler: function(event, validator) {
+             // 'this' refers to the form
+             var errors = validator.numberOfInvalids();
+             if (errors) {
+                 var message = errors == 1
+                     ? 'You missed 1 field. It has been highlighted'
+                     : 'You missed ' + errors + ' fields. They have been highlighted';
+                 $("div.error span").html(message);
+                 $("div.error").show();
+             } else {
+                 $("div.error").hide();
+             }
+         },
+         rules : { // validation rules
              firstName: {
                  required: true,
                  minlength: 2
@@ -14,7 +52,7 @@
                  digits: true
              }
          },
-         messages : {
+         messages : { //validation messages
              firstName: {
                  required: "Please enter a first name.",
                  minlength: "Please enter a name that's at least 2 characters long."
@@ -41,34 +79,6 @@
      $('.nameCol').click(function(){
          $('.nameCol span').toggleClass('glyphicon-sort-by-alphabet glyphicon-sort-by-alphabet-alt')
      });
-
-      // AJAX for adding contacts
-      $('.addbutton').click(function addContact (e){
-          e.preventDefault();
-          var firstName = $('.addcontactform').find('input[name="firstName"]').val(),
-              lastName = $('.addcontactform').find('input[name="lastName"]').val(),
-              phoneNumber = $('.addcontactform').find('input[name="phoneNumber"]').val();
-          $.ajax({
-              url: 'add.php',
-              type: 'post',
-              data: {
-                  'firstname': firstName,
-                  'lastname': lastName,
-                  'phone': phoneNumber
-              },
-              success: function(data) {
-                  if(data == "ok") {
-                  alert('Your contact has been saved.');
-                  }
-              },
-          error: function(xhr, desc, err) {
-              console.log(xhr);
-              console.log("Details: " + desc + "\nError:" + err);
-              alert('Contact not saved.');
-              }
-          }); // end ajax call
-          location.reload();
-      });
 
      // AJAX for deleting contacts
      $('body').on('click', '[name="Delete"]', function deleteContact (e) {
