@@ -5,7 +5,6 @@
     <title>phonebook</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
-      <meta http-equiv="refresh" content="0; url=index.php" />
     <link rel="shortcut icon" href="favicon.ico">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css(.) styles/vendor.css -->
@@ -30,47 +29,83 @@
     <div class="container">
       <div class="header">
         <h3 class="text-muted">Phonebook</h3>
-          <?php
-
-          // store form values as variable
-          $firstName = $_POST['firstName'];
-          $lastName = $_POST['lastName'];
-          $phone = $_POST['phoneNumber'];
-
-
-          //include db configuration file
-          include_once("config.php");
-
-          // insert form values into sql table
-          $sql = "INSERT INTO `phonebook`.`contacts` (`firstname`, `lastname`, `phone`) VALUES ('$firstName', '$lastName', '$phone')";
-
-          // success/error alert
-          if ($conn->query($sql) === TRUE) {
-              echo "Your contact has been saved!";
-          } else {
-              echo "Error: " . "<p>" . $sql . "</p><p>" . $conn->error . "</p>";
-          }
-
-          //close db connection
-          $conn->close();
-          ?>
       </div>
 
 
       <div class="row marketing">
         <div class="col-lg-6">
-          <h4></h4>
+          <h4>Add a New Contact</h4>
 
+            <?php
 
+            ?>
 
+            <form action="addcontacts.php" method="post" class="addcontactform">
+                <div class="form-group">
+                    <label for="firstName">First Name</label>
+                    <input type="text" class="form-control" id="firstName" name="firstName" placeholder="Enter First Name" required>
+                </div>
+                <div class="form-group">
+                    <label for="lastName">Last Name</label>
+                    <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Enter Last Name">
+                </div>
+                <div class="form-group">
+                    <label for="phoneNumber">Phone Number</label>
+                    <input type="tel" class="form-control" id="phoneNumber" name="phoneNumber" placeholder="Enter Phone Number" required>
+                    <p class="help-block">Enter phone number in the following format: 0000000000.</p>
+                </div>
+
+                <button type="submit" class="btn btn-default addbutton" name="Submit" id="Submit">Submit</button>
+            </form>
         </div>
 
 
           <div class="col-lg-6">
-              <h4>You added a contact!</h4>
-              Name: <?php echo($firstName . ' ' . $lastName); ?><br>
-              Phone Number: <?php echo($phone); ?>
+              <h4>Contacts</h4>
+              <div id="pbResults">
+
+                  <div class="table-responsive">
+                      <table class="table table-striped table-bordered table-condensed tablesorter savedcontacts">
+                          <thead>
+                              <tr>
+                                  <th class="nameCol">Name <span class="glyphicon glyphicon-sort-by-alphabet" aria-hidden="true"></span></th>
+                                  <th>Phone Number</th>
+                                  <th>Delete</th>
+                              </tr>
+                          </thead>
+                          <tbody>
+                              <?php
+                              //include db configuration file
+                              include_once("config.php");
+
+                              // query database
+                              $sql = "SELECT firstname, lastname, phone, pb_Id FROM `phonebook`.`contacts`";
+                              $result = $conn->query($sql);
+
+                              if ($result->num_rows > 0) {
+                                  // output data of each row
+                                  while($row = $result->fetch_assoc()) {
+                                      // display query results
+                                      echo '<tr><td>' . $row["lastname"]. ', ' . $row["firstname"]. '</td><td>' . $row["phone"]. '</td><td><form action="deletecontacts.php" method="post" class="deletecontactform"><button type="submit" class="btn btn-default" name="Delete" id="Delete" value="'.$row["pb_Id"].'" class="deletebutton">Delete</button></form></td></tr>';
+                                  }
+                                  $result->free();
+                              } else {
+                                  echo "0 results";
+                              }
+                              $conn->close();
+
+                              ?>
+                          </tbody>
+                      </table>
+                  </div>
+
+
+
+
+              </div>
           </div>
+
+
 
 
       </div>

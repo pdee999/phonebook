@@ -5,7 +5,7 @@
     <title>phonebook</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
-      <meta http-equiv="refresh" content="0; url=index.php" />
+      <!--<meta http-equiv="refresh" content="0; url=index.php" />-->
     <link rel="shortcut icon" href="favicon.ico">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css(.) styles/vendor.css -->
@@ -33,22 +33,19 @@
           <?php
 
           // store form values as variable
-          $firstName = $_POST['firstName'];
-          $lastName = $_POST['lastName'];
-          $phone = $_POST['phoneNumber'];
-
+          $pbID = $_POST['Delete'];
 
           //include db configuration file
           include_once("config.php");
 
-          // insert form values into sql table
-          $sql = "INSERT INTO `phonebook`.`contacts` (`firstname`, `lastname`, `phone`) VALUES ('$firstName', '$lastName', '$phone')";
+          // delete record
+          $del = "DELETE FROM `phonebook`.`contacts` WHERE `contacts`.`pb_Id` = $pbID";
 
           // success/error alert
-          if ($conn->query($sql) === TRUE) {
-              echo "Your contact has been saved!";
+          if ($conn->query($del) === TRUE) {
+              echo "Record deleted successfully";
           } else {
-              echo "Error: " . "<p>" . $sql . "</p><p>" . $conn->error . "</p>";
+              echo "Error deleting record: " . $conn->error;
           }
 
           //close db connection
@@ -61,15 +58,12 @@
         <div class="col-lg-6">
           <h4></h4>
 
-
-
         </div>
 
 
           <div class="col-lg-6">
-              <h4>You added a contact!</h4>
-              Name: <?php echo($firstName . ' ' . $lastName); ?><br>
-              Phone Number: <?php echo($phone); ?>
+              <h4>You deleted a contact!</h4>
+              <p>Contact #<?php echo($pbID); ?> has been deleted successfully!</p>
           </div>
 
 
