@@ -36,9 +36,7 @@
         <div class="col-lg-6">
           <h4>Add a New Contact</h4>
 
-            <?php
-
-            ?>
+            <div class="error bg-danger"><span></span></div>
 
             <form action="" method="" class="addcontactform">
                 <div class="form-group">
