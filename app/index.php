@@ -54,6 +54,7 @@
                 </div>
 
                 <button type="submit" class="btn btn-default addbutton" name="Submit" id="Submit">Submit</button>
+                <img src="images/loading.gif" class="loadingImage" />
             </form>
         </div>
 
@@ -84,7 +85,7 @@
                                   // output data of each row
                                   while($row = $result->fetch_assoc()) {
                                       // display query results
-                                      echo '<tr><td>' . $row["lastname"]. ', ' . $row["firstname"]. '</td><td>' . $row["phone"]. '</td><td><form action="" method="" class="deletecontactform"><button type="submit" class="btn btn-default" name="Delete" id="Delete-'.$row["pb_Id"].'" class="deletebutton">Delete</button></form></td></tr>';
+                                      echo '<tr><td>' . $row["lastname"]. ', ' . $row["firstname"]. '</td><td>' . $row["phone"]. '</td><td><form action="" method="" class="deletecontactform"><button type="submit" class="btn btn-default" name="Delete" id="Delete-'.$row["pb_Id"].'" class="deletebutton">Delete</button><img src="images/loading.gif" class="loadingImage loadingImage-'.$row["pb_Id"].'" /></form></td></tr>';
                                   }
                                   $result->free();
                               } else {

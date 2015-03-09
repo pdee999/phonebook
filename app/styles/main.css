@@ -83,6 +83,9 @@ body {
 .savedcontacts tr th:first-child, .savedcontacts tr td:first-child {
     text-align: left;
 }
+.loadingImage {
+    display: none;
+}
 
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
