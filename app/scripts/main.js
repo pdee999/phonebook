@@ -1,5 +1,15 @@
  $(document).ready(function(){
 
+     // add regex method
+     $.validator.addMethod(
+         "regex",
+         function(value, element, regexp) {
+             var re = new RegExp(regexp);
+             return this.optional(element) || re.test(value);
+         },
+         "Please check your input."
+     );
+
      // form validation
      $("form.addcontactform").validate({
          submitHandler: function addContact (){ // AJAX for adding contacts
@@ -52,9 +62,10 @@
              },
              phoneNumber: {
                  required: true,
-                 minlength: 10,
-                 maxlength: 10,
-                 digits: true
+                 minlength: 14,
+                 maxlength: 14,
+                 digits: true,
+                 regex: /^\([0-9][0-9][0-9]\)-[0-9][0-9][0-9]-[0-9][0-9][0-9][0-9]$/
              }
          },
          messages : { //validation messages
@@ -64,9 +75,10 @@
              },
              phoneNumber: {
                  required: "Please enter a phone number.",
-                 minlength: "Please enter at least 10 digits.",
-                 maxlength: "Please enter no more than 10 digits.",
-                 digits: "Please enter a phone number (i.e. 8005551234)."
+                 minlength: "Please enter a phone number in the following format: (800)-555-1234.",
+                 maxlength: "Please enter a phone number in the following format: (800)-555-1234.",
+                 digits: "Please enter a phone number.",
+                 regex: "Please enter a phone number in the following format: (800)-555-1234."
              }
          }
      });
